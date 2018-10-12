@@ -15,16 +15,16 @@ class ViewFeeling1 extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        this.props.dispatch({type: 'ADD_FEELING', payload: this.state.feeling});
+        this.props.dispatch({ type: 'ADD_FEELING', payload: this.state.feeling });
     }
 
     render() {
-        return(
+        return (
             <div>
                 <h2>How Are You Feeling Today On A Scale Of 1 - 5?</h2>
                 <form onSubmit={this.handleSubmit} >
-                <input type="number" placeholder="1 - 5" onChange={this.handleChange} />
-                <input type="submit" value="Submit" />
+                    <input type="number" placeholder="1 - 5" onChange={this.handleChange} />
+                    <input type="submit" value="Submit" />
                 </form>
             </div>
         );

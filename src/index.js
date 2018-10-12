@@ -8,12 +8,14 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
 
 
-const feedback = (state = [], action) => {
+const feedback = (state = {}, action) => {
     switch (action.type) {
         case 'ADD_FEELING':
-            return [...state, action.payload];
+            return {...state, feeling: action.payload};
         case 'ADD_UNDERSTANDING':
-            return [...state, action.payload];
+            return {...state, understanding: action.payload};
+        case 'ADD_SUPPORT':
+            return {...state, support: action.payload};
         default:
             return state;
     }
