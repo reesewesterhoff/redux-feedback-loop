@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class ViewComments4 extends Component {
 
@@ -17,6 +18,19 @@ class ViewComments4 extends Component {
         event.preventDefault();
         this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.comments});
         this.props.history.push('/5');
+        this.postFeedback(this.props.feedback);
+    }
+
+    postFeedback = (feedback) => {
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: feedback
+        }).then(() => {
+        }).catch(error => {
+            alert('Error submitting feedback');
+            console.log('error', error);
+        });
     }
 
     render() {
@@ -32,4 +46,10 @@ class ViewComments4 extends Component {
     }
 }
 
-export default connect()(ViewComments4);
+const mapReduxStateToProps = reduxState => {
+    return {
+        feedback: reduxState.feedback,
+    }
+}
+
+export default connect(mapReduxStateToProps)(ViewComments4);
