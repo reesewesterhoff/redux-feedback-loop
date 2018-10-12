@@ -8,12 +8,17 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
 
 
-const reducer = (state = [], action) => {
-    return state;
+const feedback = (state = [], action) => {
+    switch (action.type) {
+        case 'ADD_FEELING':
+            return [...state, action.payload]
+        default:
+            return state;
+    }
 }
 
 const allReducers = combineReducers({
-    reducer,
+    feedback,
 });
 
 // create the redux store
