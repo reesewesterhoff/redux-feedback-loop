@@ -16,6 +16,7 @@ class ViewComments4 extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.comments});
+        this.props.history.push('/5');
     }
 
     render() {
@@ -24,7 +25,7 @@ class ViewComments4 extends Component {
                 <h2>Comments</h2>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="Comments" onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Finish!" />
                 </form>
             </div>
         );

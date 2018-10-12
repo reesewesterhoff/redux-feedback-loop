@@ -16,6 +16,7 @@ class ViewSupport3 extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.props.dispatch({ type: 'ADD_SUPPORT', payload: this.state.support });
+        this.props.history.push('/4');
     }
 
     render() {
@@ -24,7 +25,7 @@ class ViewSupport3 extends Component {
                 <h2>Do you feel supported by Prime staff?</h2>
                 <form onSubmit={this.handleSubmit}>
                     <input type="number" placeholder="1-5" onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Continue" />
                 </form>
             </div>
         );
