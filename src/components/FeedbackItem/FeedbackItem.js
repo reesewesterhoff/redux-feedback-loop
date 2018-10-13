@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+import Button from '@material-ui/core/Button';
+
+
+
 
 class FeedbackItem extends Component {
 
     render() {
         let feedback = this.props.feedback;
-        return(
-            <tr>
-                <td>{feedback.feeling}</td>
-                <td>{feedback.understanding}</td>
-                <td>{feedback.support}</td>
-                <td>{feedback.comments}</td>
-                <td>{feedback.date}</td>
-                <td><button onClick={() => this.props.deleteFeedback(feedback.id)}>Delete</button></td>
-            </tr>
+        return (
+                <TableRow>
+                    <TableCell>{feedback.feeling}</TableCell>
+                    <TableCell>{feedback.understanding}</TableCell>
+                    <TableCell>{feedback.support}</TableCell>
+                    <TableCell>{feedback.comments}</TableCell>
+                    <TableCell><Button size="small" variant="outlined" color="secondary" onClick={() => this.props.deleteFeedback(feedback.id)}>Delete</Button></TableCell>
+                </TableRow>
+              
         );
     }
 }

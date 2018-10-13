@@ -22,8 +22,9 @@ input {
   text-align: center;
 }
 
-header {
-  text-align: center;
+.headerText {
+  width: 40%;
+  margin: auto;
 }
 
 .card, .submitButton {
@@ -35,4 +36,12 @@ header {
   margin-left: 150px;
 }
 
- 
+.table {
+  width: 80%;
+  margin: auto;
+}
+
+footer {
+  width: 700px;
+  margin: auto;
+}

@@ -60,8 +60,7 @@ class ViewComments4 extends Component {
         });
     }
 
-
-
+    
     render() {
 
         const { classes } = this.props;
