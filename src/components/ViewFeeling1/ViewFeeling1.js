@@ -25,7 +25,7 @@ class ViewFeeling1 extends Component {
             <div>
                 <h2>How Are You Feeling Today On A Scale Of 1-5?</h2>
                 <form onSubmit={this.handleSubmit} method="get" action="/#/2">
-                    <input type="number" placeholder="1-5" onChange={this.handleChange} />
+                    <input type="number" placeholder="1-5" min="1" max="5" autoFocus onChange={this.handleChange} />
                     <input type="submit" value="Continue" />
                 </form>
             </div>

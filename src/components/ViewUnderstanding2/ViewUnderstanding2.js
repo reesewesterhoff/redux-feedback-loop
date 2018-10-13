@@ -24,7 +24,7 @@ class ViewUnderstanding2 extends Component {
             <div>
                 <h2>How well did you understand today's material?</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="number" placeholder="1-5" onChange={this.handleChange} />
+                    <input type="number" placeholder="1-5" min="1" max="5" autoFocus onChange={this.handleChange} />
                     <input type="submit" value="Continue" /> 
                 </form>
             </div>

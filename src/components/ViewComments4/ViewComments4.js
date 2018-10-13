@@ -38,7 +38,7 @@ class ViewComments4 extends Component {
             <div>
                 <h2>Comments</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="Comments" onChange={this.handleChange} />
+                    <input type="text" placeholder="Comments" autoFocus onChange={this.handleChange} />
                     <input type="submit" value="Finish!" />
                 </form>
             </div>
