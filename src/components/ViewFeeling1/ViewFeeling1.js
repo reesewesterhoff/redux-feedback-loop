@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CardStyle from '../CardStyle/CardStyle';
+
 
 class ViewFeeling1 extends Component {
 
@@ -21,16 +23,18 @@ class ViewFeeling1 extends Component {
     }
 
     render() {
+
         return (
-            <div>
-                <h2>How Are You Feeling Today On A Scale Of 1-5?</h2>
-                <form onSubmit={this.handleSubmit} method="get" action="/#/2">
-                    <input type="number" placeholder="1-5" min="1" max="5" autoFocus onChange={this.handleChange} />
-                    <input type="submit" value="Continue" />
-                </form>
+            <div className="card">
+            <CardStyle 
+                    question="How are you feeling today?"
+                    handleSubmit={this.handleSubmit}
+                    handleChange={this.handleChange}
+                />
             </div>
         );
     }
 }
+
 
 export default connect()(ViewFeeling1);

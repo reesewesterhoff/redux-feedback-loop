@@ -8,15 +8,16 @@ import ViewComments4 from '../ViewComments4/ViewComments4';
 import ViewThankYou5 from '../ViewThankYou5/ViewThankYou5';
 import Admin from '../Admin/Admin';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Header from '../Header/Header';
+
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Feedback!</h1>
-            <h4><i>Don't forget it!</i></h4>
-          </header>
+        <CssBaseline />
+          <Header />
           <Route exact path="/" component={ViewFeeling1} />
           <Route path="/2" component={ViewUnderstanding2} />
           <Route path="/3" component={ViewSupport3} />

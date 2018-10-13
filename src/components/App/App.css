@@ -21,3 +21,12 @@ input {
   width: 75px;
   text-align: center;
 }
+
+header {
+  text-align: center;
+}
+
+.card {
+  width: 400px;
+  margin: auto;
+}

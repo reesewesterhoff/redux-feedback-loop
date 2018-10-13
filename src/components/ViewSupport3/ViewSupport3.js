@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CardStyle from '../CardStyle/CardStyle';
 
 class ViewSupport3 extends Component {
 
@@ -22,11 +23,11 @@ class ViewSupport3 extends Component {
     render() {
         return (
             <div>
-                <h2>Do you feel supported by Prime staff?</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="number" placeholder="1-5" min="1" max="5" autoFocus onChange={this.handleChange} />
-                    <input type="submit" value="Continue" />
-                </form>
+                <CardStyle 
+                    question="Do you feel supported by Prime staff?"
+                    handleSubmit={this.handleSubmit}
+                    handleChange={this.handleChange}
+                />
             </div>
         );
     }
