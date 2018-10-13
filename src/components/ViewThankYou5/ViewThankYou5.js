@@ -39,7 +39,7 @@ class ViewThankYou5 extends Component {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                                <Button className="submitButton"><Link to="/">Submit New Feedback</Link></Button>
+                                <Button variant="outlined" color="primary" className="submitButton"><Link to="/">Submit New Feedback</Link></Button>
                         </CardActions>
                     </Card>
                 </div>

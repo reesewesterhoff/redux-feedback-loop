@@ -40,7 +40,7 @@ function CardStyle(props) {
             <div className="card">
                 <Card className={classes.card}>
                     <CardContent>
-                        <Typography variant="h5" component="h2">
+                        <Typography variant="h5" gutterBottom>
                            {props.question}
                         </Typography>
                         <Typography className={classes.pos} color="textSecondary">
@@ -49,7 +49,7 @@ function CardStyle(props) {
                     </CardContent>
                     <CardActions>
                         <form onSubmit={props.handleSubmit} method="get" action="/#/2">
-                            <Input className={classes.input} type="number" placeholder="1-5" min="1" max="5" autoFocus onChange={props.handleChange} />
+                            <Input required className={classes.input} type="number" placeholder="1-5" min="1" max="5" autoFocus onChange={props.handleChange} />
                             <Button size="small" type="submit" className={classes.nextButton}>NEXT</Button>
                         </form>
                     </CardActions>

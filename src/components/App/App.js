@@ -16,18 +16,16 @@ import Footer from '../Footer/Footer';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      // light: will be calculated from palette.primary.main,
       main: '#00ACB0',
-      // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
     },
     secondary: {
       light: '#F44336',
       main: '#D32F2F',
-      // dark: will be calculated from palette.secondary.main,
       contrastText: '#ffcc00',
     },
-    // error: will use the default color
+    typography: {
+      useNextVariants: true,
+    },
   },
 });
 
@@ -46,6 +44,7 @@ class App extends Component {
           <Route path="/5" component={ViewThankYou5} />
           <Route path="/admin" component={Admin} />
           <br />
+          <br />
           <Footer />
           <h3>Dev Nav</h3>
           <Link to="/">Page One</Link>
@@ -55,7 +54,6 @@ class App extends Component {
           <Link to="/5">Page Five</Link>
           <Link to="/admin">Admin</Link>
         </div>
-        
         </MuiThemeProvider>
       </Router>
     );

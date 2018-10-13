@@ -44,4 +44,5 @@ input {
 footer {
   width: 700px;
   margin: auto;
+  opacity: 0.8;
 }

@@ -9,7 +9,7 @@ class Header extends Component {
         return (
             <header>
                 <AppBar position="relative">
-                    <Toolbar align="center">
+                    <Toolbar>
                         <div className="headerText">
                             <Typography align="center" variant="h5" color="inherit">
                                 {"My last reminder of the day"}

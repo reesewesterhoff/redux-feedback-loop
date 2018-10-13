@@ -60,7 +60,7 @@ class ViewComments4 extends Component {
         });
     }
 
-    
+
     render() {
 
         const { classes } = this.props;
@@ -76,7 +76,7 @@ class ViewComments4 extends Component {
                         <CardActions>
                             <form onSubmit={this.handleSubmit}>
                                 <Input type="text" placeholder="Comments" autoFocus onChange={this.handleChange} />
-                                <Button type="submit" value="Finish!" className={classes.button}>Finish!</Button>
+                                <Button type="submit" value="Finish!" variant="contained" color="primary" className={classes.button}>Finish!</Button>
                             </form>
                         </CardActions>
                     </Card>
