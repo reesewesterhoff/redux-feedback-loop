@@ -1,16 +1,55 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
+const styles = {
+    card: {
+        marginTop: 75,
+        minWidth: 275,
+        maxWidth: 400,
+
+    },
+    title: {
+        fontSize: 14,
+    },
+    pos: {
+        marginBottom: 12,
+    },
+};
 
 class ViewThankYou5 extends Component {
 
     render() {
-        return(
+
+        const { classes } = this.props;
+
+        return (
             <div>
-                <h2>Thank You!</h2>
-                <button><Link to="/">Submit New Feedback</Link></button>
+                <div className="card">
+                    <Card className={classes.card}>
+                        <CardContent>
+                            <Typography variant="h5" component="h2">
+                                Thank You!
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                                <Button className="submitButton"><Link to="/">Submit New Feedback</Link></Button>
+                        </CardActions>
+                    </Card>
+                </div>
             </div>
         );
     }
 }
 
-export default ViewThankYou5;
+ViewThankYou5.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(ViewThankYou5);

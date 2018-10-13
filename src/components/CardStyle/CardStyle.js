@@ -23,6 +23,12 @@ const styles = {
     pos: {
         marginBottom: 12,
     },
+    nextButton: {
+        marginLeft: 100,
+    },
+    input: {
+        margin: 10,
+    }
 };
 
 function CardStyle(props) {
@@ -43,8 +49,8 @@ function CardStyle(props) {
                     </CardContent>
                     <CardActions>
                         <form onSubmit={props.handleSubmit} method="get" action="/#/2">
-                            <Input type="number" placeholder="1-5" min="1" max="5" autoFocus onChange={props.handleChange} />
-                            <Button size="small" type="submit">NEXT</Button>
+                            <Input className={classes.input} type="number" placeholder="1-5" min="1" max="5" autoFocus onChange={props.handleChange} />
+                            <Button size="small" type="submit" className={classes.nextButton}>NEXT</Button>
                         </form>
                     </CardActions>
                 </Card>

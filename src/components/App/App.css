@@ -26,7 +26,13 @@ header {
   text-align: center;
 }
 
-.card {
+.card, .submitButton {
   width: 400px;
   margin: auto;
 }
+
+.nextButton {
+  margin-left: 150px;
+}
+
+ 
