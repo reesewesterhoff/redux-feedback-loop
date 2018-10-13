@@ -14,11 +14,11 @@ class ViewComments4 extends Component {
         });
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
-        this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.comments});
-        this.props.history.push('/5');
-        this.postFeedback(this.props.feedback);
+        await this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.comments});
+        await this.postFeedback(this.props.feedback);
+        await this.props.history.push('/5');
     }
 
     postFeedback = (feedback) => {

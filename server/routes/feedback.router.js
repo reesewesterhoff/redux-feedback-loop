@@ -15,5 +15,28 @@ router.post('/', (req, res) => {
     });
 });
 
+router.get('/', (req, res) => {
+    pool.query(`SELECT * FROM "feedback"
+                ORDER BY "id" DESC`)
+    .then(results => {
+        res.send(results.rows);
+    }).catch(error => {
+        console.log('error', error);
+        res.sendStatus(500);
+    });
+});
+
+router.delete('/:id', (req, res) => {
+    let id = req.params.id;
+    pool.query(`DELETE FROM "feedback"
+                WHERE "id"=$1;`, [id])
+    .then(() => {
+        res.sendStatus(200);
+    }).catch(error => {
+        console.log('error', error);
+        res.sendStatus(500);
+    });
+});
+
 
 module.exports = router;
