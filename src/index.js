@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
+// bring in redux, react-redux, and logger
 import { Provider } from 'react-redux';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
 
-
+// feedback reducer
 const feedback = (state = {}, action) => {
     switch (action.type) {
         case 'ADD_FEELING':
@@ -23,6 +24,7 @@ const feedback = (state = {}, action) => {
     }
 }
 
+// combine reducers
 const allReducers = combineReducers({
     feedback,
 });

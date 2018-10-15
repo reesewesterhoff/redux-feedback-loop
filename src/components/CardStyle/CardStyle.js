@@ -1,5 +1,7 @@
 import React from 'react';
+// connect to redux
 import { connect } from 'react-redux';
+// import styling
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -9,7 +11,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Input from '@material-ui/core/Input';
 
-
+// card style
 const styles = {
     card: {
         marginTop: 75,
@@ -41,13 +43,15 @@ function CardStyle(props) {
                 <Card className={classes.card}>
                     <CardContent>
                         <Typography variant="h5" gutterBottom>
-                           {props.question}
+                            {/* get question from props */}
+                           {props.question} 
                         </Typography>
                         <Typography className={classes.pos} color="textSecondary">
                             On a scale of 1 to 5
                         </Typography>
                     </CardContent>
                     <CardActions>
+                        {/* uses functions propsed down */}
                         <form onSubmit={props.handleSubmit} method="get" action="/#/2">
                             <Input required className={classes.input} type="number" placeholder="1-5" min="1" max="5" autoFocus onChange={props.handleChange} />
                             <Button size="small" type="submit" className={classes.nextButton}>NEXT</Button>

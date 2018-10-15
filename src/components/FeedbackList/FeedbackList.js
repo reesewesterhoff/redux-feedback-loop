@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+// import axios to make requests to server
 import axios from 'axios';
+// import feedbackitem
 import FeedbackItem from '../FeedbackItem/FeedbackItem';
+// import styles
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -9,8 +12,10 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+// import sweetalert for delete request
 import swal from 'sweetalert';
 
+// table styles
 const styles = theme => ({
     root: {
         width: '100%',
@@ -24,21 +29,24 @@ const styles = theme => ({
 
 class FeedbackList extends Component {
 
-
+    // define state
     state = {
         feedbackArray: [],
     }
 
+    // get feedback data on page load
     componentDidMount = () => {
         this.getFeedback();
     }
 
+    // GET request to server for feedback
     getFeedback = () => {
         axios({
             method: 'GET',
             url: '/feedback'
         }).then(response => {
             console.log(response.data);
+            // set empty array equal to data from server
             this.setState({
                 feedbackArray: response.data,
             });
@@ -46,9 +54,11 @@ class FeedbackList extends Component {
             alert('Error getting feedback from server');
             console.log('error', error);
         });
-    }
+    } // end GET request
 
+    // DELETE request to server, send id of clicked row
     deleteFeedback = feedbackId => {
+        // sweetalert to confirm or cancel delete request
         swal({
             title: 'Are you sure you want to delete?',
             icon: 'warning',
@@ -56,6 +66,7 @@ class FeedbackList extends Component {
             dangerMode: true
         }).then( (willDelete) => {
             if (willDelete) {
+                // if confirmed, axios delete request sent
                 axios({
                     method: 'DELETE',
                     url: `/feedback/${feedbackId}`
@@ -93,6 +104,7 @@ class FeedbackList extends Component {
                             </TableRow>
                         </TableHead>
                         <TableBody>
+                            {/* map through array of feedback items, return feedbackitem component for each item */}
                             {this.state.feedbackArray.map(feedback => {
                                 return <FeedbackItem
                                     key={feedback.id}

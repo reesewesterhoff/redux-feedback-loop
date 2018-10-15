@@ -1,8 +1,11 @@
+// routes/feedback.router.js
 
+// requires
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+// POST request to PostgresQL
 router.post('/', (req, res) => {
     let feedback = req.body;
     pool.query(`INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
@@ -13,8 +16,9 @@ router.post('/', (req, res) => {
         console.log('error', error);
         res.sendStatus(500);
     });
-});
+}); // end POST request
 
+// GET request for all data from PostgresQL
 router.get('/', (req, res) => {
     pool.query(`SELECT * FROM "feedback"
                 ORDER BY "id" DESC`)
@@ -24,8 +28,9 @@ router.get('/', (req, res) => {
         console.log('error', error);
         res.sendStatus(500);
     });
-});
+}); // end GET request
 
+// DELETE request, find item by id and delete
 router.delete('/:id', (req, res) => {
     let id = req.params.id;
     pool.query(`DELETE FROM "feedback"
@@ -36,7 +41,7 @@ router.delete('/:id', (req, res) => {
         console.log('error', error);
         res.sendStatus(500);
     });
-});
+}); // end DELETE request
 
-
+// exports
 module.exports = router;
