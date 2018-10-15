@@ -9,6 +9,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import swal from 'sweetalert';
 
 const styles = theme => ({
     root: {
@@ -48,15 +49,31 @@ class FeedbackList extends Component {
     }
 
     deleteFeedback = feedbackId => {
-        axios({
-            method: 'DELETE',
-            url: `/feedback/${feedbackId}`
-        }).then(() => {
-            this.getFeedback();
-        }).catch(error => {
-            alert('Error deleting feedback');
-            console.log('error', error);
-        });
+        swal({
+            title: 'Are you sure you want to delete?',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true
+        }).then( (willDelete) => {
+            if (willDelete) {
+                axios({
+                    method: 'DELETE',
+                    url: `/feedback/${feedbackId}`
+                }).then(() => {
+                    this.getFeedback();
+                }).catch(error => {
+                    alert('Error deleting feedback');
+                    console.log('error', error);
+                });
+                swal('Task successfully deleted!', {
+                    icon: 'success'
+                });
+            }
+            else{
+                return;
+            }
+        })
+        
     }
 
 
