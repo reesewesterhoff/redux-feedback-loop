@@ -19,6 +19,11 @@ const feedback = (state = {}, action) => {
             return {...state, support: action.payload};
         case 'ADD_COMMENTS':
             return {...state, comments: action.payload};
+        case 'UPDATE_ANSWERS':
+            return {
+                ...state,
+                [action.payload.propertyName]: action.payload.rating,
+            }
         default:
             return state;
     }

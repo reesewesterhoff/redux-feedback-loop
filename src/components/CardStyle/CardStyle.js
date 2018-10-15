@@ -35,6 +35,27 @@ const styles = {
 
 function CardStyle(props) {
 
+    // state = {
+    //     rating: '',
+    // }
+
+    // updateAnswers = property => async event => {
+    //     event.preventDefault();
+    //     await this.props.dispatch({
+    //         type: 'UPDATE_ANSWERS',
+    //         payload: {
+    //             ...this.state,
+    //             propertyName: property,
+    //         }
+    //     });
+    //     this.props.history.push(this.props.nextUrl);
+    // }
+
+    // handleChange = event => {
+    //     this.setState({
+    //         rating: event.target.value
+    //     });
+    // }
 
         const { classes } = props;
 
