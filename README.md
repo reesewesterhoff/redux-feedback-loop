@@ -16,9 +16,10 @@ Fork and clone the github repository to your computer. Run the following command
 
 To set up the database, create a database called `"prime_feedback"`, then type the following commands into your PostgresQL database gui.
 
+```SQL
 -- Switch to "prime_feedback" before making:
 
-`CREATE TABLE "feedback" (
+ CREATE TABLE "feedback" (
   "id" serial primary key,
   "feeling" INT not null,
   "understanding" INT not null,
@@ -26,12 +27,12 @@ To set up the database, create a database called `"prime_feedback"`, then type t
   "comments" text,
   "flagged" boolean default false,
   "date" date not null default CURRENT_DATE
-);`
+);
 
 -- Sample feedback item
-`INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
-VALUES (4, 4, 5, 'Doing Great!');`
-
+INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+VALUES (4, 4, 5, 'Doing Great!');
+```
 
 ### Future Developments
 - Add the ability to flag an existing feedback entry for further review on the /admin view.
