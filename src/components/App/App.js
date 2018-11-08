@@ -37,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        {/* use color theme throughout app */}
+        {/* use color theme throughout */}
         <MuiThemeProvider theme={theme}>
         <div className="App">
         <CssBaseline />
